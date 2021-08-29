@@ -8,8 +8,17 @@ const weatherAPI = async () => {
 const displayTemperature = result => {
     console.log(result);
     const searchResult = document.getElementById('search-result');
+    const weatherStatus = result.weather[0].main;
+    let weatherImg;
+    if(weatherStatus=="Clouds"){
+        weatherImg = "https://image.pngaaa.com/479/991479-middle.png"
+    }else if (weatherStatus=="Haze"){
+        weatherImg = "https://image.flaticon.com/icons/png/512/1779/1779862.png"
+    }else if (weatherStatus=="Clear"){
+        weatherImg = "https://www.clipartmax.com/png/middle/129-1295160_weather-report-mostly-sunny-clip-art.png"
+    }
     searchResult.innerHTML = `
-        <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+        <img src="${weatherImg}" alt="">
         <h2>${result.name}</h2>
         <h3><span>${result.main.temp}</span>&deg;C</h3>
         <h1 class="lead">${result.weather[0].main}</h1>
