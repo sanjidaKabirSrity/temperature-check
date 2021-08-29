@@ -17,10 +17,12 @@ const displayTemperature = result => {
     }else if (weatherStatus=="Clear"){
         weatherImg = "https://www.clipartmax.com/png/middle/129-1295160_weather-report-mostly-sunny-clip-art.png"
     }
+    const kelvinTemp = result.main.temp;
+    const celciusTemp = kelvinTemp-273.15;
     searchResult.innerHTML = `
         <img src="${weatherImg}" alt="" style="width: 100px; height:100px">
         <h2>${result.name}</h2>
-        <h3><span>${result.main.temp}</span>&deg;C</h3>
+        <h3><span>${celciusTemp}</span>&deg;C</h3>
         <h1 class="lead">${result.weather[0].main}</h1>
     `;
 }
