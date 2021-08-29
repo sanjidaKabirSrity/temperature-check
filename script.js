@@ -18,7 +18,7 @@ const displayTemperature = result => {
         weatherImg = "https://www.clipartmax.com/png/middle/129-1295160_weather-report-mostly-sunny-clip-art.png"
     }
     searchResult.innerHTML = `
-        <img src="${weatherImg}" alt="">
+        <img src="${weatherImg}" alt="" width="100px" height="100px">
         <h2>${result.name}</h2>
         <h3><span>${result.main.temp}</span>&deg;C</h3>
         <h1 class="lead">${result.weather[0].main}</h1>
