@@ -18,7 +18,7 @@ const displayTemperature = result => {
         weatherImg = "https://www.clipartmax.com/png/middle/129-1295160_weather-report-mostly-sunny-clip-art.png"
     }
     const kelvinTemp = result.main.temp;
-    const celciusTemp = parseInt(kelvinTemp-273.15);
+    const celciusTemp = (kelvinTemp-273.15).toFixed(2);
     searchResult.innerHTML = `
         <img src="${weatherImg}" alt="" style="width: 100px; height:100px">
         <h2>${result.name}</h2>
